@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formula calculator</title>
+    <link rel="Stylesheet" href="css/bootstrap.css"  media="screen">
+    <link rel="Stylesheet" type="text/css" href="css/popover.css"/>
+    <link rel="Stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.popover-1.1.2.js"></script>
+    <script type="text/javascript" src="js/fn.getHiddenDimensions.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction.js"></script>
+    <script type="text/javascript" src="js/classes/MathBracket.js"></script>
+    <script type="text/javascript" src="js/classes/MathAddition.js"></script>
+    <script type="text/javascript" src="js/classes/MathSubtraktion.js"></script>
+    <script type="text/javascript" src="js/classes/MathMultiplikation.js"></script>
+    <script type="text/javascript" src="js/classes/MathDivision.js"></script>
+    <script type="text/javascript" src="js/classes/MathVariable.js"></script>
+    <script type="text/javascript" src="js/classes/MathValue.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathAbs.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathAcos.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathAsin.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathAtan.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathCeil.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathCos.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathExp.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathFloor.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathLog.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathRound.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathSin.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathSqrt.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathTan.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathRandom.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathMin.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathMax.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathPow.js"></script>
+    <script type="text/javascript" src="js/classes/MathFunction/MathAtan2.js"></script>
+
+
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+        <a class="brand" href="">Formula calculator</a>
+        <ul class="nav">
+            <li><a id="functions" href="#">HOW-TO: Functions</a></li>
+            <li><a id="variables" href="#">HOW-TO: Variables</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+<div id="protocol">
+    <div id="root">
+        <div id="table">
+            <div id="table-row">
+                <div id="table-cell">
+                    <div id="output">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="bottom_container">
+    <div class="input-append">
+        <input class="input-block-level" type="text" id="inputField" value="pow(a,b);2<a<6;3<b<9">
+        <button class="btn btn-primary" id="btn_calc" type="button">=</button>
+    </div>
+</div>
+
+<div id="alert_overlay">
+</div>
+
+<div class="alert_container">
+    <div class="alert_wrapper">
+        <div class="alert_wrapper-row">
+            <div class="alert_wrapper-cell">
+                <div class="alert alert-block alert-error">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="functions-content">
+    <div class="popover-content initialism text-info " >
+    <p><abbr title="Returns the absolute value of x">abs(x)</abbr></p>
+    <p><abbr title="Returns the arccosine of x, in radians">acos(x)</abbr></p>
+    <p><abbr title="Returns the arcsine of x, in radians">asin(x)</abbr></p>
+    <p><abbr title="Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians">atan(x)</abbr></p>
+    <p><abbr title="Returns the arctangent of the quotient of its arguments">atan2(y,x)</abbr></p>
+    <p><abbr title="Returns x, rounded upwards to the nearest integer">ceil(x)</abbr></p>
+    <p><abbr title="Returns the cosine of x (x is in radians)">cos(x)</abbr></p>
+    <p><abbr title="Returns the value of Ex">exp(x)</abbr></p>
+    <p><abbr title="Returns x, rounded downwards to the nearest integer">floor(x)</abbr></p>
+    <p><abbr title="Returns the natural logarithm (base E) of x">log(x)</abbr></p>
+    <p><abbr title="Returns the number with the highest value">max(x,y,z,...,n)</abbr></p>
+    <p><abbr title="Returns the number with the lowest value">min(x,y,z,...,n)</abbr></p>
+    <p><abbr title="Returns the value of x to the power of y">pow(x,y)</abbr></p>
+    <p><abbr title="Returns a random number between 0 and 1">random()</abbr></p>
+    <p><abbr title="Rounds x to the nearest integer">round(x)</abbr></p>
+    <p><abbr title="Returns the sine of x (x is in radians)">sin(x)</abbr></p>
+    <p><abbr title="Returns the square root of x">sqrt(x)</abbr></p>
+    <p><abbr title="Returns the tangent of an angle">tan(x)</abbr></p>
+    </div>
+</div>
+
+<div id="variables-content">
+    <div class="popover-content initialism text-info " >
+        <p><abbr title="e.g. pow(a,a2); 1 < a < 5 ; 10 < a2 < 15">min < var < max</abbr></p>
+        <p><abbr title="e.g. 23 + myvar; 1 <= myvar <= 5">min <= var <= max</abbr></p>
+        <p><abbr title="e.g. 156 * 3(-myvar); -10 <= myvar < -5">min <= var < max</abbr></p>
+        <p><abbr title="e.g. 2*(3+7/(2+all4you)); -1 < all4you <= 5">min < var <= max</abbr></p>
+    </div>
+</div>
+
+
+</body>
+</html>
