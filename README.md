@@ -1,6 +1,6 @@
 #Formula calculator
 
-On Javascript based calculator that can calculate with self-defined variables. The variables can be defined within a range.
+On Javascript based calculator that can calculate with self-defined variables. The variables can be defined with a set of numbers.
 
 for example *a + b; 1 <= a < 3; 4 <= b < 7* will reveal:
 
