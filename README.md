@@ -1,4 +1,4 @@
-#Formula calculator
+# Formula calculator
 
 On Javascript based calculator that can calculate with self-defined variables. The variables can be defined with a set of numbers.
 
